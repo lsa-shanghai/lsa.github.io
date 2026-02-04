@@ -1,0 +1,85 @@
+<!-- Navigation -->
+<mat-toolbar class="navbar">
+  <div class="nav-container">
+    <span class="logo">LSA Shanghai</span>
+    <nav class="nav-links">
+      <button mat-button (click)="scrollToSection('hero')">Home</button>
+      <button mat-button (click)="scrollToSection('about')">About</button>
+      <button mat-button (click)="scrollToSection('work')">Work</button>
+      <button mat-button (click)="scrollToSection('contact')">Contact</button>
+    </nav>
+  </div>
+</mat-toolbar>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Building the Future</h1>
+    <p class="hero-subtitle">LSA Shanghai is dedicated to advancing technology through open source, research, and community collaboration.</p>
+    <div class="hero-actions">
+      <button mat-raised-button color="primary" class="cta-button" (click)="scrollToSection('work')">
+        Explore Our Work
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="section-container">
+    <h2 class="section-title">About LSA Shanghai</h2>
+    <p class="section-description">
+      We are a community of passionate developers, researchers, and innovators committed to creating 
+      impactful solutions and contributing to the global technology ecosystem. Based in Shanghai, 
+      we work on cutting-edge projects that span open source development, AI research, and developer education.
+    </p>
+  </div>
+</section>
+
+<!-- Work Section -->
+<section id="work" class="work-section">
+  <div class="section-container">
+    <h2 class="section-title">Our Work</h2>
+    <div class="projects-grid">
+      @for (project of projects; track project.title) {
+        <mat-card class="project-card">
+          <mat-card-header>
+            <div mat-card-avatar class="project-icon">
+              <mat-icon>{{ project.icon }}</mat-icon>
+            </div>
+            <mat-card-title>{{ project.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ project.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="section-container">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-description">
+      Interested in collaborating or learning more about our work? 
+      We'd love to hear from you.
+    </p>
+    <div class="contact-links">
+      <a href="https://github.com/lsa-shanghai" target="_blank" mat-raised-button>
+        <mat-icon>code</mat-icon>
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2026 LSA Shanghai. All rights reserved.</p>
+  </div>
+</footer>
+
+<router-outlet />
