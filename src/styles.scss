@@ -8,6 +8,7 @@
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
   @include mat.theme((
     color: (
       primary: mat.$azure-palette,
@@ -19,7 +20,7 @@ html {
 }
 
 body {
-  // Default the application to a light color theme. This can be changed to
+  // Default the application to a light color scheme. This can be changed to
   // `dark` to enable the dark color theme, or to `light dark` to defer to the
   // user's system settings.
   color-scheme: light;
@@ -39,9 +40,5 @@ body {
 
 * {
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 /* You can add global styles to this file, and also import other style files */
